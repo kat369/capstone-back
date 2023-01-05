@@ -36,7 +36,7 @@ let authenticate = (req, res, next) => {
 
 
 };
-app.get("/liveprojects", authenticate, async function (req, res) {
+app.get("/liveprojects", async function (req, res) {
 
   try {
     const connection = await mongoClient.connect(URL);
@@ -56,7 +56,7 @@ app.get("/liveprojects", authenticate, async function (req, res) {
   }
 });
 
-app.get("/completedprojects", authenticate, async function (req, res) {
+app.get("/completedprojects", async function (req, res) {
   try {
     const connection = await mongoClient.connect(URL);
 
